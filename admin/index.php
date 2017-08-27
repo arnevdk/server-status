@@ -1,47 +1,4 @@
 <?php require_once("../resources/php/settings.php"); ?>
-<?php require_once("../resources/php/processchecker.php"); ?>
-<?php
-
-function get_server_ram_usage(){
-
-    $free = shell_exec('free');
-    $free = (string)trim($free);
-    $free_arr = explode("\n", $free);
-    $mem = explode(" ", $free_arr[1]);
-    $mem = array_filter($mem);
-    $mem = array_merge($mem);
-    $memory_usage = $mem[2];
-
-    return $memory_usage;
-}
-
-function get_server_total_ram(){
-
- $free = shell_exec('free');
-    $free = (string)trim($free);
-    $free_arr = explode("\n", $free);
-    $mem = explode(" ", $free_arr[1]);
-    $mem = array_filter($mem);
-    $mem = array_merge($mem);
-    $memory_usage = $mem[1];
-
-    return $memory_usage;
-
-
-}
-
-function get_server_cpu_usage(){
-
-    $load = sys_getloadavg();
-    return $load[0];
-
-}
-
-function get_server_max_cpu(){
-	global $num_cpus;
-	return  $num_cpus * 2;
-}
-?>
 
 
 <html>
@@ -109,35 +66,35 @@ function get_server_max_cpu(){
 
 
 	<script>
-	var ctx = document.getElementById("cpu-chart").getContext('2d');
-	var cpu_chart = new Chart(ctx, {
-    		type: 'doughnut',
-    		data: {
-      		labels: ["Used", "Free"],
-      		datasets: [
-        			{
-	  			label: "CPU usage",
-          			data: [<?php echo get_server_cpu_usage(); ?>,<?php echo  get_server_max_cpu() - get_server_cpu_usage(); ?>],
-          			backgroundColor: ['#337ab7', Chart.defaults.global.defaultColor]
-				}
-      			]
-    		}
-	});
+  	var ctx = document.getElementById("cpu-chart").getContext('2d');
+  	var cpu_chart = new Chart(ctx, {
+      		type: 'doughnut',
+      		data: {
+        		labels: ["Used", "Free"],
+        		datasets: [
+          			{
+  	  			label: "CPU usage",
+            			data: [<?php echo get_server_cpu_usage(); ?>,<?php echo  get_server_max_cpu() - get_server_cpu_usage(); ?>],
+            			backgroundColor: ['#337ab7', Chart.defaults.global.defaultColor]
+  				}
+        			]
+      		}
+  	});
 
-	ctx = document.getElementById("ram-chart").getContext('2d');
-        var ram_chart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                labels: ["Used", "Free"],
-                datasets: [
-                                {
-                                label: "RAM usage",
-                                data: [<?php echo get_server_ram_usage(); ?>,<?php echo get_server_total_ram() - get_server_ram_usage(); ?>],
-                                backgroundColor: ['#337ab7', Chart.defaults.global.defaultColor]
-                                }
-                        ]
-                }
-        });
+  	ctx = document.getElementById("ram-chart").getContext('2d');
+          var ram_chart = new Chart(ctx, {
+                  type: 'doughnut',
+                  data: {
+                  labels: ["Used", "Free"],
+                  datasets: [
+                                  {
+                                  label: "RAM usage",
+                                  data: [<?php echo get_server_ram_usage(); ?>,<?php echo get_server_total_ram() - get_server_ram_usage(); ?>],
+                                  backgroundColor: ['#337ab7', Chart.defaults.global.defaultColor]
+                                  }
+                          ]
+                  }
+          });
 
 	</script>
 

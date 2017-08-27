@@ -1,16 +1,4 @@
 <?php require_once("resources/php/settings.php"); ?>
-<?php require_once("resources/php/processchecker.php"); ?>
-
-<?php
-
-	$externalIp='<span class="text-muted">Failed fetching external IP</span>';
-	$context = stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
-
-	$externalContent = file_get_contents('http://checkip.dyndns.com', False, $context);
-	preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
-	$externalIp = $m[1];
-
-?>
 
 <html>
         <head>
@@ -27,11 +15,11 @@
 						<tbody>
 							<tr>
 								<td>External IP:</td>
-								<td><b><?php echo $externalIp; ?></b></td>
+								<td><b><?php echo get_external_ip(); ?></b></td>
 							</tr>
 							<tr>
 								<td>Local IP:</td>
-								<td><b><?php echo $_SERVER['SERVER_ADDR']; ?></b></td>
+								<td><b><?php echo get_internal_ip(); ?></b></td>
 							</tr>
 						</tbody>
 					</table>
