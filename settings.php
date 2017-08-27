@@ -1,4 +1,5 @@
 <?php
+
 # featured_services:
 #
 # Fill in the services of which you want the status displayed
@@ -11,7 +12,10 @@
 #         'plexmediaserver' => 'plex-logo.png'
 # );
 $featured_services = array(
+
+
 );
+
 # admin_services:
 #
 # Fill in the services of which you want the status displayed
@@ -23,7 +27,12 @@ $featured_services = array(
 #         'fail2ban'
 # );
 $admin_services = array(
-	);
+	"slapd",
+	"mysql",
+
+
+);
+
 # disk_mounts:
 #
 # Fill in the mount points of the folders of which the available space will be
@@ -35,12 +44,17 @@ $admin_services = array(
 #         '/media/raid'
 # );
 $disks = array(
+	"/",
+	"/media/arne/Data"
 );
+
+
 # num_cpus:
 #
 # Fill in the total number of processors (not cores!) of your system. This will
 # be used to scale the cpu load displayed.
 #
 # e.g.: $num_cpus = 1;
-$num_cpus = 0;
+$num_cpus = 1;
+
  ?>

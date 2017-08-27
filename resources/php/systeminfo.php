@@ -57,4 +57,31 @@ function get_server_max_cpu(){
 	return  $num_cpus * 2;
 }
 
+function disk_total($mount_point){
+	 $total =  disk_total_space($mount_point);
+	 return round($total/1000000);
+}
+
+function disk_used($mount_point){
+	$total =  disk_total_space($mount_point);
+	$used = $total - disk_free_space($mount_point);
+	return round($used/1000000);
+}
+
+function disk_free($mount_point){
+  $free = disk_free_space($mount_point);
+	return round($free/1000000);
+}
+
+function disk_percentage($mount_point){
+	$total =  disk_total_space($mount_point);
+	$used = $total - disk_free_space($mount_point);
+	return ($used/$total)*100;
+}
+
+function check_disk($disk){
+	return disk_total_space($disk);
+
+}
+
 ?>

@@ -27,18 +27,22 @@
 			<div class="row">
 				<div class="col-md-6">
 					<?php foreach($disks as $disk): ?>
-					<?php
-						$total =  disk_total_space($disk);
-						$used = $total - disk_free_space($disk);
-						$ratio = ($used/$total)*100;
-					?>
-					<h4>Disk root: <em><?php echo $disk; ?></em></h4>
-					<span class="text-muted"><?php echo round($used/1000000) ?> MiB of <?php echo round($total/1000000) ?> MiB used</span>
-					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $used; ?>" aria-valuemin="0" aria-valuemax="<?php echo $total ?>" style="width:<?php echo $ratio; ?>%">
-    							<span class="sr-only"><?php echo $used ?> MB used</span>
-  						</div>
-					</div>
+				  <h4>Disk root: <em><?php echo $disk; ?></em></h4>
+          <?php if (check_disk($disk)): ?>
+  					<span class="text-muted"><?php echo disk_used($disk); ?> MiB of <?php echo disk_total($disk) ?> MiB used</span>
+  					<div class="progress">
+  						<div class="progress-bar" role="progressbar" aria-valuenow="<?php echo disk_used($disk); ?>" aria-valuemin="0" aria-valuemax="<?php echo disk_total($disk); ?>" style="width:<?php echo disk_percentage($disk); ?>%">
+      							<span class="sr-only"><?php echo $used ?> MB used</span>
+    						</div>
+  					</div>
+          <?php else: ?>
+              <strong>Disk not found or no permissions.</strong>
+              <div class="progress">
+    						<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0">
+        							<span class="sr-only">0 MB used</span>
+      						</div>
+    					</div>
+          <?php endif; ?>
 					<?php endforeach; ?>
 				</div>
 				<div class="col-md-6">
