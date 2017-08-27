@@ -6,7 +6,11 @@ $DEBUG = True;
 
 # server_name:
 # The name of the server, to be displayed in the navbar.
+<<<<<<< HEAD
 $server_name = "Vroengard";
+=======
+$server_name = "My Server";
+>>>>>>> 5a3325f35f25709bb2b0844213af054201469ac7
 
 # featured_services:
 # Fill in the services of which you want the status displayed
@@ -33,10 +37,7 @@ $featured_services = array(
 #         'fail2ban'
 # );
 $admin_services = array(
-	"slapd",
-	"mysql",
-
-
+	
 );
 
 # disk_mounts:
@@ -49,8 +50,7 @@ $admin_services = array(
 #         '/media/raid'
 # );
 $disks = array(
-	"/",
-	"/media/arne/Data"
+	"/"
 );
 
 
@@ -67,10 +67,18 @@ $num_cpus = 1;
 #
 # e.g.:
 # $nav_links = array(
+<<<<<<< HEAD
 #						'Other server' => 'other.domain.com',
 #    				'Plex'				 => 'plex.domain.com'
 # );
 $nav_links = array(
 			'Plex' => 'http://plex.vandenkerchove.com'
+=======
+#	'Other server' => 'other.domain.com',
+#    	'Plex'	=> 'plex.domain.com'
+# );
+$nav_links = array(
+
+>>>>>>> 5a3325f35f25709bb2b0844213af054201469ac7
 );
  ?>
