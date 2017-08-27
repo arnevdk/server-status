@@ -6,7 +6,7 @@
                 </tr>
         </thead>
         <tbody>
-                <?php foreach($processes as $process) : ?>
+                <?php foreach($admin_services as $process) : ?>
                         <tr>
                                 <td>
                                         <?php echo $process; ?>
