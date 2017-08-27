@@ -55,6 +55,6 @@ $disks = array(
 # be used to scale the cpu load displayed.
 #
 # e.g.: $num_cpus = 1;
-$num_cpus = 2;
+$num_cpus = 1;
 
  ?>
