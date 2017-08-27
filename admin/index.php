@@ -2,23 +2,6 @@
 <?php require_once("../resources/php/processchecker.php"); ?>
 <?php
 
-$processes = array(
-	"ssh",
-	"fail2ban",
-	"slapd",
-	"mysql",
-	"plexmediaserver"
-
-);
-
-$disks = array(
-	"/",
-	"/media/mediaroot"
-);
-
-$num_cpus = 2;
-
-
 function get_server_ram_usage(){
 
     $free = shell_exec('free');
@@ -64,9 +47,9 @@ function get_server_max_cpu(){
 <html>
 	<head>
 		<title>Alagaesia | admin</title>
-		
+
 		<?php include_once("../includes/styles.inc.php") ?>
-	
+
 	</head>
 	<body>
 		<?php include_once("../includes/navbar.inc.php") ?>
@@ -74,7 +57,7 @@ function get_server_max_cpu(){
 			<h1>Alagaesia admin page</h1>
 			<hr>
 			<h2>Tools</h2>
-			<div class="row">	
+			<div class="row">
 				<div class="col-md-3">
 					<ul class="list-group">
 						<li class="list-group-item"><a href="phpmyadmin">phpMyAdmin</a></li>

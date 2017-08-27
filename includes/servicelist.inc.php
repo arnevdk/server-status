@@ -7,7 +7,7 @@
                 </tr>
         </thead>
         <tbody>
-                <?php foreach($processes as $process => $logo):  ?>
+                <?php foreach($featured_services as $process => $logo):  ?>
                         <tr>
 				<td>
 					<img style="height: 100px; width: auto;" src="/images/servicelogos/<?php echo $logo ?>" />

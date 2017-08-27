@@ -3,13 +3,6 @@
 
 <?php
 
-$processes = array(
-	'plexmediaserver'	=> 'plex_logo.png',
-	'minecraft-ftb'		=> 'ftb_logo.png',
-	
-);
-
-
 	$externalIp='<span class="text-muted">Failed fetching external IP</span>';
 	$context = stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
 
@@ -51,4 +44,3 @@ $processes = array(
 		<?php include("includes/footer.inc.php"); ?>
 	</body>
 </html>
-
