@@ -1,4 +1,4 @@
-<?php require_once("resources/php/settings.php"); ?>
+<?php require_once("resources/php/inc.php"); ?>
 
 <html>
         <head>
