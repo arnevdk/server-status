@@ -13,7 +13,6 @@
 # );
 $featured_services = array(
 
-
 );
 
 # admin_services:
@@ -27,11 +26,7 @@ $featured_services = array(
 #         'fail2ban'
 # );
 $admin_services = array(
-	"slapd",
-	"mysql",
-
-
-);
+	);
 
 # disk_mounts:
 #
@@ -44,8 +39,7 @@ $admin_services = array(
 #         '/media/raid'
 # );
 $disks = array(
-	"/",
-	"/media/arne/Data"
+
 );
 
 
@@ -55,6 +49,6 @@ $disks = array(
 # be used to scale the cpu load displayed.
 #
 # e.g.: $num_cpus = 1;
-$num_cpus = 1;
+$num_cpus = 0;
 
  ?>
