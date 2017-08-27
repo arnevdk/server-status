@@ -1,7 +1,14 @@
 <?php
 
+# DEBUG:
+# Display PHP errors, warnings and notices.
+$DEBUG = True;
+
+# server_name:
+# The name of the server, to be displayed in the navbar.
+$server_name = "Vroengard";
+
 # featured_services:
-#
 # Fill in the services of which you want the status displayed
 # on the public status page. You can map them to their logos.
 # The logos should be placed in /images/servicelogos
@@ -17,7 +24,6 @@ $featured_services = array(
 );
 
 # admin_services:
-#
 # Fill in the services of which you want the status displayed
 # on the private admin page.
 #
@@ -34,7 +40,6 @@ $admin_services = array(
 );
 
 # disk_mounts:
-#
 # Fill in the mount points of the folders of which the available space will be
 # shown on the private admin page.
 #
@@ -50,11 +55,22 @@ $disks = array(
 
 
 # num_cpus:
-#
 # Fill in the total number of processors (not cores!) of your system. This will
 # be used to scale the cpu load displayed.
 #
 # e.g.: $num_cpus = 1;
 $num_cpus = 1;
 
+# nav_links
+# The navigation links to be displayed in the navbar. Map the link title
+# to the link url
+#
+# e.g.:
+# $nav_links = array(
+#						'Other server' => 'other.domain.com',
+#    				'Plex'				 => 'plex.domain.com'
+# );
+$nav_links = array(
+			'Plex' => 'http://plex.vandenkerchove.com'
+);
  ?>
