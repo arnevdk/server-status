@@ -2,7 +2,7 @@
 
 <html>
         <head>
-                <title>Alagaesia</title>
+                <title><?php echo $server_name; ?></title>
                 <?php include_once("includes/styles.inc.php"); ?>
         </head>
         <body>

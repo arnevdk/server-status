@@ -3,7 +3,7 @@
 
 <html>
 	<head>
-		<title>Alagaesia | admin</title>
+		<title><?php echo $server_name; ?> | admin</title>
 
 		<?php include_once("../includes/styles.inc.php") ?>
 
