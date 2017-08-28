@@ -1,8 +1,13 @@
 # Get started #
 ## Installation ##
+
+This package is only tested on Ubuntu!
+
 ### 1. Command line tools ###
 ServerStatus makes use of the systemctl package.
-```$ sudo apt-get install systemctl```
+```
+$ sudo apt-get install systemctl
+```
 
 ### 2. Clone site ###
 Clone this repository in your apache web directory, e.g. ```/var/www```, or
