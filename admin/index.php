@@ -25,7 +25,7 @@
 									</tr>
 									<tr>
 										<td >Processor:</td>
-										<td class="text-muted"><?php echo server_cpu_info(); ?></td>
+										<td class="text-muted"><?php echo server_cpu_info(); if(num_cpus() > 1):?> x <?php echo num_cpus(); endif; ?></td>
 									</tr>
 									<tr>
 										<td>Memory:</td>
