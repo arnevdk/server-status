@@ -13,14 +13,41 @@
 		<div class="container" style="padding-top: 50px;">
 			<h1>Alagaesia admin page</h1>
 			<hr>
-			<h2>Tools</h2>
+
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-8">
+					<h2>System info</h2>
+						<table class="table">
+								<tbody>
+									<tr>
+										<td>Operating system:</td>
+										<td class="text-muted"><?php echo php_uname(); ?></td>
+									</tr>
+									<tr>
+										<td >Processor:</td>
+										<td class="text-muted"><?php echo server_cpu_info(); ?></td>
+									</tr>
+									<tr>
+										<td>Memory:</td>
+										<td class="text-muted"><?php echo server_ram_info(); ?></td>
+									</tr>
+									<tr>
+										<td>HTTP Server:</td>
+										<td class="text-muted"><?php echo $_SERVER['SERVER_SOFTWARE']; ?></td>
+									</tr>
+							</tbody>
+						</table>
+				</div>
+				<div class="col-md-4">
+					<h2>Tools</h2>
 					<ul class="list-group">
+					  <li class="list-group-item"><a href="phpinfo.php">phpInfo</a></li>
 						<li class="list-group-item"><a href="phpmyadmin">phpMyAdmin</a></li>
 						<li class="list-group-item"><a href="phpldapadmin">phpLDAPAdmin</a></li>
 					</ul>
 				</div>
+
+
 			</div>
 			<hr>
 			<h2>Status</h2>

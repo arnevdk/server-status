@@ -53,7 +53,7 @@ function get_server_cpu_usage(){
 }
 
 function get_server_max_cpu(){
-	global $num_cpus;
+	$num_cpus = num_cpus();
 	return  $num_cpus * 2;
 }
 
@@ -83,5 +83,23 @@ function check_disk($disk){
 	return disk_total_space($disk);
 
 }
+
+function server_cpu_info(){
+	$file = file('/proc/cpuinfo');
+	$proc_details = $file[4];
+	return substr($proc_details, 12);
+}
+
+function server_ram_info(){
+	$file = file('/proc/meminfo');
+	$proc_details = $file[0];
+	return $proc_details;
+}
+
+function num_cpus(){
+	return exec('cat /proc/cpuinfo | grep "physical id" | sort | uniq | wc -l');
+}
+
+
 
 ?>
