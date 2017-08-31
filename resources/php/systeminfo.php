@@ -1,7 +1,14 @@
 <?php
+include_once(dirname(__FILE__)."/../../override.php");
 
 function check_process($pname){
-	return exec("systemctl is-active ".$pname) == "active";
+	global $overrides;
+		if(isset($overrides[$pname])){
+				return call_user_func($overrides[$pname]);
+		}else{
+			return exec("systemctl is-active ".$pname) == "active";
+	}
+
 }
 
 function get_external_ip(){
