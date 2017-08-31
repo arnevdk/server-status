@@ -1,7 +1,16 @@
-# Get started #
-## Installation ##
+# Linux Server Status #
+_This package is only tested on Ubuntu!_
 
-This package is only tested on Ubuntu!
+Linux Server Status provides an easily adaptable info page that summarizes the
+status of your server. It contains a public page, on which you can advertise
+running public services, as well as a private administartion page. The admin
+page shows info about running services, RAM, CPU and disk usage and the
+system's software and hardware.
+
+This software makes use a combination of a PHP framework and Linux CLI tools to
+collect information about your system.
+
+## Get Started ##
 
 ### 1. Command line tools ###
 ServerStatus makes use of the systemctl package.

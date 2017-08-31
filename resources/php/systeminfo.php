@@ -39,7 +39,6 @@ function get_server_total_ram(){
     $mem = array_filter($mem);
     $mem = array_merge($mem);
     $memory_usage = $mem[1];
-
     return $memory_usage;
 
 
@@ -93,7 +92,8 @@ function server_cpu_info(){
 function server_ram_info(){
 	$file = file('/proc/meminfo');
 	$proc_details = $file[0];
-	return $proc_details;
+	$kb_string = substr($proc_details, 9, sizeof($proc_details) - 5);
+	return (string)(round((int)$kb_string / 1000000))." GB RAM";
 }
 
 function num_cpus(){
