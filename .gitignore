@@ -2,3 +2,4 @@ images/*
 !images/*/
 images/*/*
 settings.php
+override.php
