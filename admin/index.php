@@ -11,7 +11,7 @@
 	<body>
 		<?php include_once("../includes/navbar.inc.php") ?>
 		<div class="container" style="padding-top: 50px;">
-			<h1>Alagaesia admin page</h1>
+			<h1><?php echo $server_name ?> admin page</h1>
 			<hr>
 
 			<div class="row">

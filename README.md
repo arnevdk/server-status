@@ -1,5 +1,5 @@
 # Linux Server Status #
-_This package is only tested on Ubuntu!_
+__This package is only tested on Ubuntu Server!__
 
 Linux Server Status provides an easily adaptable info page that summarizes the
 status of your server. It contains a public page, on which you can advertise
@@ -39,3 +39,24 @@ config in ```/etc/apache2/apache2.conf```:
 ### 4. Complete settings ###
 Fill in the ```settings.php``` in the site's root directory as indicated in the
 file.
+
+## Override Process Status ##
+Linux Server Status can show the status (running/not running) of selected
+processes on the front page and on the administration page. For installed
+services, this status is retrieved using the Linux ```systemctl``` package. It
+is sufficient to list the services of which you want the status displayed in the
+```settings.php``` file. It is however also possible to display the status of
+processes that are not services or can't be found by ```systemctl```.
+
+### 1. Add the custom process name to the settings ###
+Choose a name for your custom process and add it either to ```admin_services``` or
+```featured_services``` in ```settings.php```.
+
+### 2. Add an override behavior function ###
+First, add an entry in the ```overrides```array in ```overrides.php```. The
+entry should have your chosen process name as key and the name of the behavior
+function as value.
+
+Then add a behavior function in the file. This function should return a
+boolean value and it's output is rendered on the site as the status of the
+corresponding process.
