@@ -12,7 +12,7 @@ collect information about your system.
 
 ## Get Started ##
 
-### 1. Command line tools ###
+### 1. Install command line tools ###
 ServerStatus makes use of the systemctl package.
 ```
 $ sudo apt-get install systemctl
