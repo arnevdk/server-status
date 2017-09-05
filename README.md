@@ -35,6 +35,10 @@ config in ```/etc/apache2/apache2.conf```:
                 Require valid-user
         </Location>
 ```
+You can then set your user password with the following command:
+```
+$ sudo htpasswd -c /etc/apache2/htpasswd <username>
+```
 
 ### 4. Complete settings ###
 Fill in the ```settings.php``` in the site's root directory as indicated in the
